@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\setcounter{tocdepth}{3}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+%\usepackage{thmtools}
+%\usepackage{hyperref}
+
+
+\title{Calculus I HW12}
+\author{Chengyu Hsieh B13201053}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{definition}{Definition}
+\newtheorem*{answer}{answer}
+
+\begin{document}
+\maketitle
+\newpage
+\section*{10.20}
+\subsection*{32.}
+Since $\frac{sin(t)}{t} < 1 \,\,\,\, \forall t>0$, subsitute $t$ for $\frac{1}{n}$ yields
+\begin{equation*}
+    nsin(\frac{1}{n})<1 \Rightarrow 1-n sin(\frac{1}{n})>0
+\end{equation*}
+Since $n>0$ we also have
+\begin{equation*}
+    \frac{1-nsin(\frac{1}{n})}{n}>0 \,\,\,\, \forall n \in \mathbb{N}
+\end{equation*}
+Let $m = \frac{1}{n}$
+Now note
+\begin{equation*}
+\lim_{n \to \infty} \frac{\left| 1-nsin \left( \frac{1}{n} \right) \right|}{\left| \frac{1}{n^2} \right|} \\
+= \lim_{m \to 0} \frac{m-sin \left( m \right)}{m^2} \\
+= \lim_{m \to 0} \frac{1-cos \left( m \right)}{2m} \\
+= \lim_{m \to 0} \frac{sin \left( m \right)}{2} = 0
+\end{equation*}
+hence $\exists N$ s.t. $\left| \frac{a_{n}}{b_{n}} - 0 \right| < 1 \,\,\,\, \forall n \ge N \Rightarrow \exists N \, s.t. \, |a_{n}| < |b_{n}|\,\,\,\, \forall n \ge N$ 
+Also since 
+
+
+\end{document}
