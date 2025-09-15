@@ -23,17 +23,36 @@
 \setlength{\parindent}{0cm}
 \numberwithin{equation}{section}
 
+
 \title{ODE Homework 2\, (3 \%)}
 \author{Chengyu Hsieh, B13201053}
 \date{}
 \begin{document}
 \maketitle
+
+
 Let \(P_n\) be the Legendre polynomial of degree \(n\). Prove that \(|
 P'_n(x)|<n^2\) and \(|P''_n(x)|<n^4\) for \(-1<x<1\).\\
-\\\\
+\\
 \section*{Proof}
+For $n = 0$ or $n = 1$, one can check that the condition that the problem gave does not hold. We thus assume $n \geq 2$.
+It has been shown in \cite{szego1975} that $P_{n}(x) \leq 1$ in $[-1, 1]$. The Markov brothers' inequality\cite{shadrin2005} states that for a polynomial $p$ with degree $\leq n$, we have 
+$$
+\max_{-1 \leq x \leq 1} |p^{k}(x)| \leq (\max_{-1 \leq x \leq 1}|T_{n}^{k}|)(\max_{-1 \leq x \leq 1} |p(x)|) = \frac{n^{2}(n^{2}-1^{2}) \dots (n^{2}-(k-1)^{2})}{1 \cdot 3 \dots (2k-1)}(\max_{-1 \leq x \leq 1} |p(x)|)
+$$
+with the equality holding only if $p = \gamma T_{n}$ where $|\gamma| = 1$\cite{shadrin2005}.\\
 
-\section*{Reference}
-G. Szegő, Orthogonal Polynomials, American Mathematical Society Colloquium Publications, Vol. 23, 1939.\\
+For the case of $|P_{n}''(x)|$, applying the Markov brothers' inequality on $|P_{n}''(x)|$ gives us
+$$
+|P_{n}''(x)| \leq \frac{n^{2}(n^{2}-1^{2})}{1 \cdot 3} \max_{-1\leq x \leq 1}|P_{n}(x)| < n^{2}(n^{2}-1) < n^{4}
+$$
 
+For the case of $P_{n}'$, we again apply the Markov brothers' inequality to $|P_{n}'(x)|$. Note that $\not\exists \gamma$ with $|\gamma|=1 $ such that $P_{n}'(x) = \gamma T_{n}$. Hence the equality does not hold. Thus
+$$
+|P_{n}'(x)| < n^{2} \max_{-1 \leq x \leq 1}|P_{n}(x)| = n^{2}
+$$
+
+\bibliographystyle{plain}
+\bibliography{refs}
 \end{document}
+

@@ -1,5 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1757763686.42074 "ODEHW2.tex" "ODEHW2.pdf" "ODEHW2" 1757763686.72358 0
+["bibtex ODEHW2"] 1757899325.45628 "ODEHW2.aux" "ODEHW2.bbl" "ODEHW2" 1757901531.41533 0
+  "./refs.bib" 1757898956.32179 1231 253111ded852cca328a85874e99d0369 ""
+  "/usr/share/texlive/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
+  "ODEHW2.aux" 1757901531.35286 179 20130f02196a200436e22c3efc3ff1b9 "pdflatex"
+  (generated)
+  "ODEHW2.bbl"
+  "ODEHW2.blg"
+  (rewritten before read)
+["pdflatex"] 1757901531.1665 "ODEHW2.tex" "ODEHW2.pdf" "ODEHW2" 1757901531.41546 0
   "/etc/texmf/web2c/texmf.cnf" 1728011042.2148 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -20,6 +28,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
@@ -28,6 +37,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty" 1644112042 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
@@ -63,8 +73,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1757677502.10396 230484 b5ecf1e2279bd656c2c0037689af4d45 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1757677511 6898658 b2949f435edd6703087b35bf4470fd32 ""
-  "ODEHW2.aux" 1757763686.67923 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "ODEHW2.tex" 1757763685.47259 2011 c65ebb6b9a452a71bd78c9daae4bb92f ""
+  "ODEHW2.aux" 1757901531.35286 179 20130f02196a200436e22c3efc3ff1b9 "pdflatex"
+  "ODEHW2.bbl" 1757899325.48773 331 3f64be95ef294dbc538d9d39093c9d4f "bibtex ODEHW2"
+  "ODEHW2.tex" 1757901530.50469 2122 edefd004a31a6af1c44187dd0af110d1 ""
   (generated)
   "ODEHW2.aux"
   "ODEHW2.log"
