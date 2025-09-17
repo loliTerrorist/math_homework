@@ -1,0 +1,179 @@
+\documentclass[A4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+%\theoremstyle{bfremark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{claim}{Claim}
+
+\setlength{\parindent}{0cm}
+\numberwithin{equation}{section}
+
+\title{Analysis Intro hw2}
+\author{Chengyu Hsieh, B13201053}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{enumerate}[(1)]
+    \item
+        \begin{enumerate}[(i)]
+            \item
+                For any $x, y \in X$, 
+                $$
+                d'(x,y) = \frac{d(x,y)}{1+d(x,y)} \ge \frac{0}{1+0} = 0
+                $$
+                with the equality only holding when $x = y$.
+            \item
+                For any  $x, y \in X$, 
+                $$
+                d'(x,y) = \frac{d(x,y)}{1+d(x,y)} = \frac{d(y,x)}{1+d(y,x)} = d'(y,x)
+                $$
+            \item
+                For any $x, y, z \in X$, notice that
+                \begin{align*}
+                &(1-\frac{1}{1+d(x,y)} - \frac{1}{1-d(y,z)}) + \frac{1}{1+d(x,y)+d(y,z)}
+                \\&\ge (1-\frac{1}{1+d(x,y)} - \frac{1}{1-d(y,z)}) + \frac{1}{1+d(x,y)+d(y,z)+d(x, y)d(y,z)}                
+                \\&= \frac{d(x,y)d(y,z)}{(1+d(x,y)(1+d(y,z)))} \ge 0
+                \end{align*}
+                Hence $(1-\frac{1}{1+d(x,y)} - \frac{1}{1-d(y,z)}) \ge -\frac{1}{1+d(x,y)+d(y,z)}$
+
+                \begin{align*}
+                d'(x,z) &= \frac{d(x,z)}{1+d(x,z)} \\&= 1 - \frac{1}{1+d(x,y)} \\&\leq 1 - \frac{1}{1+d(x,y)+d(y,z)} \\&\leq 1+1-\frac{1}{1+d(x,y)} - \frac{1}{1-d(y,z)} \\&= (1+\frac{1}{1+d(x,y)}+(1+\frac{1}{1+d(y,z)})) = d'(x,y) + d'(y,z)
+                \end{align*}
+        \end{enumerate}
+        Thus d' is a metric on X.
+
+    \item
+        \begin{enumerate}[(a)]
+            \item
+                Since $B$ is clearly a subset of $C$ and $\overline{B} = B \cup \partial B$, it suffice to prove that $\partial B \subseteq C$.
+                Assume the opposite, that is, suppose $\exists x \in \partial B$ such that $x \not \in C$. Since $x \not \in C$, we have $d(x,x_0) > r$.
+                Let $r_0 := d(x,x_0) - r > 0$. Since $x \in \partial B$, $B(x, r_0) \cap B  \not = \varnothing$. 
+                Let $y \in B(x, r_0) \cap B$. Then $d(y, x_0) < d(x, x_0) - r$ and $d(x_0, y)< r$. Adding the two equations together gives us $d(x_0, y) + d(y, x) < d(x, x_0)$, which contradicts the triangle inequality. Thus $\partial B \subseteq C$ and $\overline{B} \subseteq C$.
+            \item
+                Consider the metric space $(\mathbb{R}, d)$ where d is the discrete metric, and let $x_0 = 0$, $r = 1$. 
+                Since $d(0, x) = 1$ for any $x \not = 0$, we have $B = \{0\}$ and $C = \mathbb{R}$.
+                Now see that for any $0< r < 1$ and $x \not = 0$, we have $d(x, 0) = 1 \not < r$, thus $B(x, r) \cap B = \varnothing$ and $B(0, r)\cap \mathbb{R} \backslash B = \varnothing$. Hence $\partial B = \varnothing$ and $\overline{B} = {0} \not = \mathbb{R} = C$.
+        \end{enumerate}
+    \item
+        \begin{enumerate}
+            \item
+                \textbf{Sufficiency:}\\
+                Suppose $E$ is open in $(X, d_{2})$. Then $\mathrm{int}(E) = E$ in $(X, d_{2})$. Thus for any $x \in E,\, \exists r>0$ such that $B_{(X,d_{2})}(x, C_2 r) \subseteq E$. 
+                Now see that since $C_2d_2(x,y) \ge d_1(x,y)$, we have $B_{(X,d_1)}(x, r) \subseteq B_{(X, d_2)}(x, C_2r) \subseteq E$ for any $x \in E$. Hence $\mathrm{int}(E) = E$ $in (X, d_{1})$, and so $E$ is open is $(X, d_1).$
+                \\
+                \textbf{Necessity: }\\
+                Suppose $E$ is open in $(X, d_1)$. Note that $\frac{1}{C_1}d_1(x,y) \ge d_2(x,y)$. The rest of the proof is analogous to that of the sufficiency section.
+            \item
+                \textbf{Sufficiency:}\\
+                Assume $E$ is closed in $(X, d_2)$. Then $X\backslash E$ is open. 
+                By (a) we know that $X\backslash E$ is also open in $(X,d_1)$, 
+                therefore $E$ is closed in $(X, d_1)$.
+                \\
+                \textbf{Necessity:}
+                The proof is analogous to that of the sufficiency section.
+            \item
+                Consider $(\mathbb{R}, d(x,y):= |x-y|)$ and $(\mathbb{R}, d'(x, y) := \min(1, |x-y|))$.
+                Note that $d$ is unbounded while $d'$ is bounded, so they clearly are not Lipschitz equivalent.
+                Now we prove that they are topologically equivalent.
+                \\For any $U \subset \mathbb{R}$ that is open in $(\mathbb{R}, d)$:\\
+                $\forall x \in U$, $\exists r>0$ such that $B_d(x, r) \subseteq U$. Note we may choose $r<1$. Then $B_d'(x, r)=B_d(x, r) \subset U$.
+                \\Following similar arguments we see that any subset open in $(\mathbb{R}, d')$ is also open in $(\mathbb{R}, d)$. Hence $d$ and $d'$ are topologically equivalent metrics.
+        \end{enumerate}
+
+    \item 
+        Let $L_C(x):= Cx$ for $x \in \mathbb{R}^n$, where $C \in \mathcal{M}_n$. 
+        Then $L_C$ is linear and has the same rank as $C$.
+        \begin{claim}
+            $N(A-B) = \mathbb{R}^n \iff A = B$
+            \proof
+            Assume $N(A-B) = \mathbb{R}^n$. Then $(A-B)x = 0 \forall x \in \mathbb{R}^N$. Thus $Ax = Bx$ for any $x$ and hence $A = B$.
+            Now assume $A = B$. Then $A-B = 0$ and so $(A-B)x = 0 \forall x \in \mathbb{R}^n$. Hence $N(A-B) = \mathbb{R}^n$.
+        \end{claim}
+        \begin{enumerate}[(i)]
+            \item
+                By Claim 1, $\rho(A,B) = rank(A-B) = n-nullity(A-B) \ge 0$ where the equality only holds when $A = B$.
+            \item
+                $\rho(A,B) = rank(A-B) = rank(B-A) = \rho(B,A)$.
+            \item
+                Note that $rank(A+B) \le rank(A) + rank(B)$. Hence $\rho(A,C) = rank(A-B+B-C) \le rank(A-B) + rank(B-C) = \rho(A,B) + \rho(B,C)$.
+        \end{enumerate}
+        Hence $\rho$ is a metric on $\mathcal{M}_n$.
+
+        \item
+            \begin{enumerate}[(a)]
+                \item
+                    $\partial E = X \backslash (int(E) \cup ext(E))$, thus $X \backslash \partial E = int(E) \cup ext(E)$.
+                    Suppose that $\exists x \in \partial(\partial E)$ such that $x \not \in \partial E$. 
+                    Since $x \not \in \partial E$, $x \in int(E)$ or $x \in ext(E)$.
+                    If $x \in int(E)$, then $\exists r>0$ such that $B(x, r) \subseteq E$. 
+                    But $x \in \partial(\partial E)$ so $\varnothing \neq B(x,r) \cap ext(E) \subseteq B(x, r) \cap X\backslash E$, arriving at a contradiction.
+                    If $x \in ext(E)$, we arrive at a contradiction in a similar manner.
+                    Thus $\partial(\partial E) \subseteq \partial E$ and $\partial E$ is closed.
+                \item
+                    Note that $\forall x \in \partial E$, $r>0$, we have $(B(x, r) \cap E \not = \varnothing$ and $B(x, r) \cap X\backslash E \not = \varnothing) \iff (B(x, r) \cap X\backslash (X \backslash E) \not = \varnothing$ and $B(x, r) \cap X \backslash E \not = \varnothing$.
+                    Hence $\partial E = \partial (X\backslash E)$.
+                    Now see that $\overline{E} = int(E) \cup \partial E$ and $\overline{X\backslash E} = ext(E) \cup \partial (X \backslash E) = ext(E) \cup \partial E$. From this we obtain $\overline{E} \cap \overline{X\backslash E} = \partial E$.
+                \item
+                    $E$ is closed, so $\overline{E} = E$. $E$ is open, so $X \backslash E$ is closed and $\overline{E\backslash X} = E\backslash X$.
+                    By (b), we have $\partial E = \overline{E} \cap \overline{X\backslash E} = E \cap (X\backslash E) = \varnothing$.
+                \item
+                    We work with the metric $d = |x-y|$.   
+                    Consider $S = \{1\}$. Then $\partial S = \{1\} \cap ([1, \infty] \cup [-\infty, 1]) = 1$. $\partial (\partial S) = \partial(\{1\}) = \{1\} \neq \varnothing$.
+            \end{enumerate}
+        \item
+            \begin{enumerate}[(a)]
+                \item
+                    Clearly, $A \subseteq S \subseteq T$. It suffice to prove that $\overline{S} \subseteq \overline{A}$. Suppose $\exists x \in \overline{S}$ such that $x \not \in \overline{A}$. 
+                    Since $S \subseteq A$, we must have $x \in \partial S$.
+                    By definition, for any $r>0$, $B(x, r) \cap S \neq \varnothing \Rightarrow B(x,r) \cap A \neq \varnothing$. Hence $x \in \partial A \subseteq \overline{A}$, contradicting our assumption. 
+                    Thus $\overline{S} \subseteq \overline{A}$ and $A \subseteq S \subseteq T \subseteq \overline{S} \subseteq \overline{A}$  and $A$ is dense in $T$.
+                \item
+                    Suppose that $B \not \subseteq \overline{A \cap B}$. 
+                    Then $\exists x_0 \in B,\, r_0 > 0$ such that $B(x_0, r_0) \cap A \cap B = \varnothing$. 
+                    Since $B \subseteq S \subseteq \overline{A}$, for any $x \in B$, either $x \in int(A)$ or $x \in \partial A$. 
+                    Note $x_0 \in B(x_0, r_0) \cap B$. By our assumption, we must have $x_0 \not  \in A$ and so $x_0 \in \partial A$.
+                    Since $B$ is open in $S$, $\exists r_1>0$ such that $B(x_0, r_1) \cap S  \subseteq B$.
+                    Recall that $x_0 \in \partial A$, so $\exists x_1 \in B(x_0, r_1) \cap A$.
+                    Then $x_1 \in A \subseteq S \Rightarrow x_1 \in S \backslash B$. But this means that $B(x_0, r_1) \cap S\backslash B \neq \varnothing$, contradicting the statement that $B(x_0, r_1) \cap S  \subseteq B$.
+                    Hence $B \subseteq \overline{A\cap B}$.
+                \item
+                    $A \cap B \subseteq S$ is trivial, so it suffice to show that $S \subseteq \overline{A\cap B}$. 
+                    Note that $B \subseteq \overline{A \cap B}$, so it remains to show $S\backslash B \subseteq \overline{B}$.
+                    Since $S \subseteq \overline{A}$, for any $x_0 \in S\backslash B$, either $x \in int(A)$ or $x \in \partial A$.
+                    Also, $S\backslash B \subseteq \overline{B}$, thus $S \backslash B \subseteq \partial B$.
+                    \\If $x_0 \in int(A)$, then combined with $x_0 \in \partial B$ we have for any $r>0$
+                    $$
+                    B(x_0, r) \cap A \cap B \neq \varnothing
+                    $$
+                    and so $x_0 \in \overline{A\cap B}$.
+                    \\If $x_0 \in \partial A$, then for any $r_0 > 0\, \exists x_1 \in B(x_0, r_0) \cap A$.
+                    \\If $x_1 \in B$ then $x_0\in \overline{A\cap B}$.
+                    \\If $x_1 \in \partial B$ then $\forall r_1 > 0$ we have  $B(x_1, r_1)\cap B \neq \varnothing$ and so
+                    $$
+                    B(x_1, r_1) \cap A \cap B  \neq \varnothing
+                    $$
+                    Let $r_1 < r_0 - d(x_0, x_1)$. Then $B(x_1, r_1) \subseteq B(x_0, r_0)$. 
+                    Hence $B(x_0, r_0) \cap A \cap B \neq \varnothing$ for any $r_0 > 0 \Rightarrow x_0 \in \overline{A\cap B}$.
+                    \\                    We conclude that $A \cap B \subseteq S \subseteq \overline{A\cap B}$, and so $A\cap B$ is dense in $S$.
+
+
+            \end{enumerate}
+\end{enumerate}
+
+\end{document}
