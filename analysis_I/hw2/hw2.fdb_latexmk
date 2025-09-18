@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1758075395.67887 "hw2.tex" "hw2.pdf" "hw2" 1758075396.12273 0
+["pdflatex"] 1758167124.83967 "hw2.tex" "hw2.pdf" "hw2" 1758167125.29724 0
   "/etc/texmf/web2c/texmf.cnf" 1728011042.2148 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -67,8 +67,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1757677502.10396 230484 b5ecf1e2279bd656c2c0037689af4d45 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1757677511 6898658 b2949f435edd6703087b35bf4470fd32 ""
-  "hw2.aux" 1758075396.06074 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "hw2.tex" 1758075395.07272 11649 89f9e4406520fad7346e97b851a2d6fa ""
+  "hw2.aux" 1758167125.23517 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
+  "hw2.tex" 1758167124.60516 11703 d5ae501908e7d80d4c4d2a6dde4760c1 ""
   (generated)
   "hw2.aux"
   "hw2.log"

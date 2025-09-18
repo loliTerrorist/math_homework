@@ -139,8 +139,9 @@
         \item
             \begin{enumerate}[(a)]
                 \item
-                    Clearly, $A \subseteq S \subseteq T$. It suffice to prove that $\overline{S} \subseteq \overline{A}$. Suppose $\exists x \in \overline{S}$ such that $x \not \in \overline{A}$. 
-                    Since $S \subseteq A$, we must have $x \in \partial S$.
+                    Clearly, $A \subseteq S \subseteq T$. It suffice to prove that $\overline{S} \subseteq \overline{A}$. 
+                    Suppose $\exists x \in \overline{S}$ such that $x \not \in \overline{A}$. 
+                    Since $S \subseteq \overline{A}$, we must have $x \in \partial S$.
                     By definition, for any $r>0$, $B(x, r) \cap S \neq \varnothing \Rightarrow B(x,r) \cap A \neq \varnothing$. Hence $x \in \partial A \subseteq \overline{A}$, contradicting our assumption. 
                     Thus $\overline{S} \subseteq \overline{A}$ and $A \subseteq S \subseteq T \subseteq \overline{S} \subseteq \overline{A}$  and $A$ is dense in $T$.
                 \item
@@ -154,7 +155,7 @@
                     Hence $B \subseteq \overline{A\cap B}$.
                 \item
                     $A \cap B \subseteq S$ is trivial, so it suffice to show that $S \subseteq \overline{A\cap B}$. 
-                    Note that $B \subseteq \overline{A \cap B}$, so it remains to show $S\backslash B \subseteq \overline{B}$.
+                    Note that by (b) we  have $B \subseteq \overline{A \cap B}$, so it remains to show $S\backslash B \subseteq \overline{A\cap B}$.
                     Since $S \subseteq \overline{A}$, for any $x_0 \in S\backslash B$, either $x \in int(A)$ or $x \in \partial A$.
                     Also, $S\backslash B \subseteq \overline{B}$, thus $S \backslash B \subseteq \partial B$.
                     \\If $x_0 \in int(A)$, then combined with $x_0 \in \partial B$ we have for any $r>0$
