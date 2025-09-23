@@ -1,0 +1,103 @@
+\documentclass[A4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+%\theoremstyle{bfremark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{claim}{Claim}
+
+\setlength{\parindent}{0cm}
+\numberwithin{equation}{section}
+
+\title{ODE HW3}
+\author{Chengyu Hsieh, B13201053}
+\date{}
+\begin{document}
+\maketitle
+
+\textbf{I.} Give the solutions, where possible in terms of the Bessel
+functions, of the differential equations
+\begin{enumerate}
+\item [(a)]\(x\frac{d^2y}{dx^2}+(x+1)^2y=0\),
+\item [(b)]\((1-x^2)\frac{d^2y}{dx^2}-2x\frac{dy}{dx}
++n(n+1)y=0\)
+\end{enumerate}
+\textbf{Grading:}
+[1 \%]: State your method and explain why it works.
+[2 \%]: Show your calculations.
+\\
+\textbf{Sketch: }
+For (a), use the method of Frobenius, we would find that the roots of the indicial equation differ by 1.
+For (b), the equation is clearly a legendre equation. Use the formula for the legendre functions, then use the reduction of order to obtain the other solution.\\
+\textbf{Calculation:}
+\begin{enumerate}[(a)]
+    \item
+        Start by assuming $y = \sum_{r=0}^\infty a_r x^{r+c}$. 
+        Plug it into the equation and obtain 
+        \begin{align*}
+            &\sum_{r=0}^\infty a_r(r+c)(r+c-1)x^{r+c-1} + (x^2 + 2x + 1)\sum_{r=0}^\infty a_r x^{r+c} = 0\\
+            &\text{For easier notation let }a_{-1} = a_{-2} = 0.\\
+            &a_0 (c)(c-1)x^{c-1} + \sum_{r=0}^\infty a_{r+1}(r+c+1)(r+c)x^{r+c} +   \sum_{r=0}^\infty a_rx^{r+c} + \sum_{r=0}^\infty 2a_{r-1} x^{r+c}+ \sum_{r=0}^\infty a_{r-2}x^{r+c} = 0\\
+            &a_0c(c-1) = 0\\
+            &\text{Note that if $c=0$, this makes $(c)(c+1)a_1+a_0 = 0$ for any $a_1$. This gives $a_0 = 0$ which we do not want.} \\
+            &\text{Thus we let $c=1$.}
+        \end{align*}
+    \item
+        $P_n(x) = \sum_{r=0}^m (-1)^r \frac{(2n-2r)!x^{n-2r}}{2^nr!(n-r)!(n-2r)!}$
+\end{enumerate}
+\vspace{20pt}
+\textbf{II.} Determine the coefficients of the Fourier-Bessel series
+for the function
+\begin{align*}
+f(x)=
+\begin{cases}
+1 \quad \text{ for } 0 \leq x< 1,\\
+-1 \quad \text{ for } 1 \leq x \leq 2,
+\end{cases}
+\end{align*}
+in terms of the Bessel function \(J_0(x)\).\\
+\textbf{Grading:}
+[1 \%]: State your method and explain why it works.
+[2 \%]: Show your calculations.
+
+\textbf{Sketch:}\\
+By \cite{textbook}, the coefficient $C_j$ corresponding to $J_0(\lambda_j x)$ is $\frac{2}{a^2[J_0'(\lambda_ja)]^2} \int_0^a xJ_0(\lambda_jx)f(x)dx$.\\
+\textbf{Calculations:}\\
+\begin{align*}
+    C_j &= \frac{2}{2^2[J_0'(\lambda_ja)]^2} \int_0^a xJ_0(\lambda_jx)f(x)dx
+    \\
+        &= \frac{1}{2[J_0'(\lambda_ja)]^2}(\int_0^1 xJ_0(\lambda_jx)dx - \int_1^2 xJ_0(\lambda_jx)dx)
+        \\
+        &\text{Let } y = \lambda_jx. \\
+    C_j &= \frac{1}{2\lambda_j^2[J_0'(\lambda_ja)]^2}(\int_0^1 xJ_0(\lambda_jx)dx - \int_1^2 xJ_0(\lambda_jx)dx)
+        \\
+        &= \frac{1}{2\lambda_j^2[J_0'(\lambda_ja)]^2}(\int_0^{\lambda_j} yJ_0(y)dy - \int_{\lambda_j}^{2\lambda_j} yJ_0(y)dy)
+        \\
+        &\text{ By }\cite{textbook},\; \frac{x}{dx}(x^cJ_c(x)) = x^cJ_{c-1}(x)\\
+    C_j &= \frac{1}{2\lambda_j^2[J_0'(\lambda_ja)]^2}(\int_0^{\lambda_j} \frac{d}{dy}(yJ_1(y))dy - \int_{\lambda_j}^{2\lambda_j} \frac{d}{dy}(yJ_1(y))dy)
+        \\
+        &= \frac{1}{2\lambda_j^2[J_0'(\lambda_ja)]^2}(\lambda_jJ_1(\lambda_j)-(2\lambda_j J_1(2\lambda_j)-\lambda_jJ_1(\lambda_j))
+        \\
+        &= \frac{1}{2\lambda_j^2[J_0'(\lambda_ja)]^2}(2\lambda_jJ_1(\lambda_j)-2\lambda_j J_1(2\lambda_j))
+        \\
+        &\text{By }\cite{textbook},\; J'_0(x) =  -J_1(x)\\
+    C_j &= \frac{1}{\lambda_j[J_1(2\lambda_j)]^2}(J_1(\lambda_j)-J_1(2\lambda_j))
+\end{align*}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{document}

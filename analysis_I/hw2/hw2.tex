@@ -136,43 +136,48 @@
                     We work with the metric $d = |x-y|$.   
                     Consider $S = \{1\}$. Then $\partial S = \{1\} \cap ([1, \infty] \cup [-\infty, 1]) = 1$. $\partial (\partial S) = \partial(\{1\}) = \{1\} \neq \varnothing$.
             \end{enumerate}
+
         \item
             \begin{enumerate}[(a)]
                 \item
-                    Clearly, $A \subseteq S \subseteq T$. It suffice to prove that $\overline{S} \subseteq \overline{A}$. 
-                    Suppose $\exists x \in \overline{S}$ such that $x \not \in \overline{A}$. 
-                    Since $S \subseteq \overline{A}$, we must have $x \in \partial S$.
-                    By definition, for any $r>0$, $B(x, r) \cap S \neq \varnothing \Rightarrow B(x,r) \cap A \neq \varnothing$. Hence $x \in \partial A \subseteq \overline{A}$, contradicting our assumption. 
-                    Thus $\overline{S} \subseteq \overline{A}$ and $A \subseteq S \subseteq T \subseteq \overline{S} \subseteq \overline{A}$  and $A$ is dense in $T$.
+                    Clearly, $A \subseteq S \subseteq T$. It suffice to prove that $T \subseteq \overline{A}^T$. 
+                    Since $\overline{S}^T = T$, $\forall x_0 \in T$, $\forall r_0>0$, $B(x_0, r_0)\cap T \cap S \neq \varnothing$. 
+                    Hence $\exists x_1 \in B(x_0, r_0) \cap T \cap S$.
+                    Since $\overline{A}^S  = S$, $\forall r_1 > 0$, $B(x_1, r_1) \cap S \cap A \neq \varnothing$.
+                    Let $r_1 < r_0 - d(x_0, x_1)$. Then $B(x_1, r_1) \subseteq B(x_0, r_0)$.
+                    Therefore $B(x_0, r_0) \cap T \cap A \supseteq B(x_1, r_1) \cap T \cap A \neq \varnothing$ $\forall x_0 \in T, \: r_0 > 0$.
+                    We conclude that $A \subseteq T \subseteq \overline{A}^T$.
                 \item
-                    Suppose that $B \not \subseteq \overline{A \cap B}$. 
-                    Then $\exists x_0 \in B,\, r_0 > 0$ such that $B(x_0, r_0) \cap A \cap B = \varnothing$. 
-                    Since $B \subseteq S \subseteq \overline{A}$, for any $x \in B$, either $x \in int(A)$ or $x \in \partial A$. 
-                    Note $x_0 \in B(x_0, r_0) \cap B$. By our assumption, we must have $x_0 \not  \in A$ and so $x_0 \in \partial A$.
-                    Since $B$ is open in $S$, $\exists r_1>0$ such that $B(x_0, r_1) \cap S  \subseteq B$.
-                    Recall that $x_0 \in \partial A$, so $\exists x_1 \in B(x_0, r_1) \cap A$.
-                    Then $x_1 \in A \subseteq S \Rightarrow x_1 \in S \backslash B$. But this means that $B(x_0, r_1) \cap S\backslash B \neq \varnothing$, contradicting the statement that $B(x_0, r_1) \cap S  \subseteq B$.
-                    Hence $B \subseteq \overline{A\cap B}$.
+                    Since $B$ is open in $S$, $\forall b \in B \subseteq S$, $\exists r_0 > 0$ such that $B(b, r_0)\cap S \subseteq B$.
+                    Note $b \in \overline{A}^S$, so $\forall r>0$, we have, 
+                    $$
+                    B(b, r)\cap S \cap A \neq \varnothing
+                    $$
+                    Now for $0<r \le r_0$,
+                    \begin{align*}
+                        &\varnothing \neq B(b, r) \cap S \cap A \subseteq B(b,r_0)\cap  S \cap A \subseteq B \\
+                        \Rightarrow &B(b, r) \cap S \cap A \cap B = B(b, r) \cap S \cap A \neq \varnothing
+                    \end{align*}
+                    . For $r>r_0$, 
+                    \begin{align*}
+                        &\varnothing \neq B(b, r_0) \cap S \cap A \subseteq B(b, r) \cap S \cap A \\
+                        &\text{Also, } B(b, r_0) \cap S \cap A \subseteq B,\: \text{so }  \exists y \in B(b, r) \cap S \cap A \cap B\\
+                        \Rightarrow &B(b, r)\cap S \cap A \cap B \neq \varnothing \\
+                        \Rightarrow &B(b, r) \cap S \cap (A \cap B) \neq \varnothing \: \forall b \in B ,\: r>0 \\
+                        \Rightarrow & B \subseteq \overline{A\cap B}^S
+                    \end{align*}
+                   
                 \item
-                    $A \cap B \subseteq S$ is trivial, so it suffice to show that $S \subseteq \overline{A\cap B}$. 
-                    Note that by (b) we  have $B \subseteq \overline{A \cap B}$, so it remains to show $S\backslash B \subseteq \overline{A\cap B}$.
-                    Since $S \subseteq \overline{A}$, for any $x_0 \in S\backslash B$, either $x \in int(A)$ or $x \in \partial A$.
-                    Also, $S\backslash B \subseteq \overline{B}$, thus $S \backslash B \subseteq \partial B$.
-                    \\If $x_0 \in int(A)$, then combined with $x_0 \in \partial B$ we have for any $r>0$
-                    $$
-                    B(x_0, r) \cap A \cap B \neq \varnothing
-                    $$
-                    and so $x_0 \in \overline{A\cap B}$.
-                    \\If $x_0 \in \partial A$, then for any $r_0 > 0\, \exists x_1 \in B(x_0, r_0) \cap A$.
-                    \\If $x_1 \in B$ then $x_0\in \overline{A\cap B}$.
-                    \\If $x_1 \in \partial B$ then $\forall r_1 > 0$ we have  $B(x_1, r_1)\cap B \neq \varnothing$ and so
-                    $$
-                    B(x_1, r_1) \cap A \cap B  \neq \varnothing
-                    $$
-                    Let $r_1 < r_0 - d(x_0, x_1)$. Then $B(x_1, r_1) \subseteq B(x_0, r_0)$. 
-                    Hence $B(x_0, r_0) \cap A \cap B \neq \varnothing$ for any $r_0 > 0 \Rightarrow x_0 \in \overline{A\cap B}$.
-                    \\                    We conclude that $A \cap B \subseteq S \subseteq \overline{A\cap B}$, and so $A\cap B$ is dense in $S$.
-
+                    $A \cap B \subseteq S$ is trivial, so it suffice to show that $S \subseteq \overline{A\cap B}^S$. 
+                    Note that by (b) we  have $B \subseteq \overline{A \cap B}^S$, so it remains to show $S\backslash B \subseteq \overline{A\cap B}^S$.
+                    $\forall x_0 \in S\backslash B \subseteq \overline{B}^S$, $r_0 > 0$, we have $B(x_0, r_0) \cap S \cap B \neq \varnothing$.
+                    Pick $x_1 \in B(x_0, r_0) \cap S \cap B$. 
+                    Since $B$ is opened in $S$, $\exists r_1 > 0$ such that $B(x_1, r_1) \cap S \cap A \subseteq B(x_1, r_1) \cap S \subseteq B$.
+                    Note $x_1 \in \overline{A}^S$, so $\forall r>0$ we have $B(x_1, r) \cap S \cap A \neq \varnothing$. Also $x_1 \neq x_0$.
+                    Let $r \le \min(r_1, r_0-d(x_0, x_1)) $. Then $B(x_1, r) \cap S \cap A \subseteq B(x_1. r_1) \cap S \cap A \subseteq B$ and $B(x_1, r) \cap S \cap A \subseteq B(x_0. r_0) \cap S \cap A$.
+                    Hence $B(x_0, r_0) \cap S \cap A \cap B \supseteq B(x_1, r)  \cap S \cap A \cap B = B(x_1) \cap S \cap A \neq \varnothing$.
+                    Then $x_0 \in \overline{A\cap B}^S$ and $S\backslash B \subseteq \overline{A\cap B}^S$.
+                    We conclude that $A\cap B \subseteq S \subseteq \overline{A\cap B}^S$ and $S$ is dense in $A\cap B$.
 
             \end{enumerate}
 \end{enumerate}

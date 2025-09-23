@@ -1,0 +1,81 @@
+\documentclass[A4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+%\theoremstyle{bfremark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{claim}{Claim}
+
+\setlength{\parindent}{0cm}
+\numberwithin{equation}{section}
+
+\title{Analysis HW3}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{enumerate}[(1)]
+    \item
+        Let $L$ be a limit point of the sequence $(x^{(n)})_{n=m}^\infty$.
+        Consider $B(L, \epsilon)$ for any $\epsilon>0$. 
+        Then $\exists  n \ge m$ such that $d(x^{(n)}, L) < \epsilon \Rightarrow x^{(n)} \in B(L, \epsilon) \cap S$. 
+        So $B(L, \epsilon)  \cap S \neq \varnothing$ and $L$ is an adherent point of $S$.
+        \\
+        Now consider the sequence $x_1 = 1, x_i = 0$ for $i\ge 2$.
+        Then $\overline{S} = \{1, 0\}$
+        Set $L = 1$.
+        For $\epsilon = \frac{1}{2} > 0$, $N = 2$,  see that $\forall n\ge N$ we have 
+        \begin{align*}
+            d(x^{(n)}, L) = d(0, 1) = 1 \not < \frac{1}{2}
+        \end{align*}
+        . Hence $L$ is not a limit point of this sequence and the converse is false.
+    \item
+        \begin{enumerate}[(a)]
+            \item
+                \textbf{Reflexive: }\\
+                For some Cauchy sequence $(x_n)_{n=1}^\infty$ in X, 
+                $\lim_{n \rightarrow \infty} d(x_n, x_n) = \lim_{n \rightarrow \infty} 0 = 0$.
+                Hence $\mathrm{LIM}_{n \rightarrow \infty} x_n = \mathrm{LIM}_{n \rightarrow \infty} x_n$.
+                \\
+                \textbf{Symmetry: }\\
+                For some Cauchy sequences $(x_n)_{n=1}^\infty$, $(y_n)_{n=1}^\infty$ in X such that $\mathrm{LIM}_{n\rightarrow \infty} x_n = \mathrm{LIM}_{n\rightarrow \infty} y_n$, 
+                $\lim_{n \rightarrow \infty} d(x_n, y_n) = \lim_{n \rightarrow \infty} d(y_n, x_n)$.  
+                Hence $\mathrm{LIM}_{n \rightarrow \infty} y_n = \mathrm{LIM}_{n \rightarrow \infty} x_n$.
+                \\
+                \textbf{Transitive: }\\
+                For some Cauchy sequences $(x_n)_{n=1}^\infty$, $(y_n)_{n=1}^\infty$, $(z_n)_{n=1}^\infty$ in X such that $\mathrm{LIM}_{n \rightarrow \infty} x_n = \mathrm{LIM}_{n \rightarrow \infty} y_n$ and $\mathrm{LIM}_{n \rightarrow \infty} y_n = \mathrm{LIM}_{n \rightarrow \infty} z_n$, 
+                note that $0 \le \lim_{n \rightarrow \infty} d(x_n,z_n) \le \lim_{n \rightarrow \infty} (d(x_n, y_n)+ d(y_n, z_n)) = 0$ by the triangle inequality.
+                Hence $\lim_{x  \rightarrow \infty } d(x_n, z_n)= 0$ and $\mathrm{LIM}_{x \rightarrow \infty} x_n  = \mathrm{LIM}_{n \rightarrow \infty} z_n$.
+            \\We conclude that the equality relation of the formal limit is an equivalence relation.
+            \item
+                We first verify that the limit exists. 
+                Given two Cauchy sequences $(x_n)_{n=1}^\infty$, $(y_n)_{n=1}^\infty$ in $X$, by definition we can find $m>n$ such that $d(x_n, x_m)<\frac{\epsilon}{2}$ and $d(y_n, y_m) < \frac{\epsilon}{2}$. 
+                Then, by the triangle inequality we obtain $d(x_m,y_m) - d(x_n, y_n) \le d(x_n, x_m) + d(y_n, y_m) < \epsilon$. Thus $(d(x_n, y_n))_{n=1}^\infty$ is Cauchy in $\mathbb{R}$ with the usual metric, which is complete, so $\lim_{n\rightarrow \infty} d(x_n, y_n)$ exists.
+                \\
+                Next we show that this distance does not depend on the choice of representatives.
+                Let $(x_n)_{n=1}^\infty$, $(x_n')_{n=1}^\infty$, $(y_n)_{n=1}^\infty$, $(y_n')_{n=1}^\infty$ be Cauchy sequences in $X$ such that $\mathrm{LIM}_{n \rightarrow \infty} x_n = \mathrm{LIM}_{n \rightarrow \infty} x_n'$ and $\mathrm{LIM}_{n \rightarrow \infty} y_n = \mathrm{LIM}_{n \rightarrow \infty} y_n'$
+                
+        \end{enumerate}
+    \item
+    \item
+    \item
+    \item
+
+
+\end{enumerate}
+
+\end{document}
