@@ -1,0 +1,104 @@
+\documentclass[A4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+%\theoremstyle{bfremark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{claim}{Claim}
+
+\setlength{\parindent}{0cm}
+\numberwithin{equation}{section}
+
+\title{ODE Homework 4}
+\author{Chengyu Hsieh, B13201053}
+\date{}
+\begin{document}
+\maketitle
+\textbf{I.}[2 \%] Comment on the difficulties that you face when
+trying to construct the Green's function for the boundary value
+problem
+\begin{align*}
+y''(x)+y(x)=f(x) \quad \text{subject to} \quad y(a)=y'(b)=0.
+\end{align*}
+\textbf{Grading:}
+[1 \%]: State your method and explain why it works.
+[1 \%]: Show your results.
+\\
+\textbf{Method: }\\
+As shown in \cite{textbook}, we first find the solutions to the homogeneous equation, $v_1, v_2$, then construct the Green function by \begin{align*}
+    \tilde{G}(x, s) = \begin{cases}
+        v_1(s)v_2(x), &a \le s < x \\
+        v_1(x)v_2(s), &x < s \le b
+    \end{cases}
+\end{align*}
+and finally obtaining the Green function by $G(x, s) = \frac{\tilde{G}(x)}{Wp(x)} = \frac{\tilde{G}(x)}{W}$ to ensure that $C = 1$. 
+\\
+\textbf{Calculation: }\\
+Notice that $v_1(x) = sin(x-a)$ and $v_2(x) = cos(x-b)$ are solutions to the homogeneous equation satisfying the boundary conditions.
+\begin{align*}
+    W &= v_1(x)v_2'(x) - v_1'(x)v_2(x) \\
+    &= -cos(x-a)cos(x-b) - sin(x-a)sin(x-b) \\
+    &= -cos(b-a)
+\end{align*}
+Note that if $cos(b-a) = 0$ we cannot divide by the wronskian, hence this is the difficulty we face.
+Suppose that $cos(b-a) \neq 0$ we have \begin{align*}
+    G(x, s) = \begin{cases}
+        -\frac{v_1(s)v_2(x)}{cos(b-a)}, &a \le s < x \\
+        -\frac{v_1(x)v_2(s)}{cos(b-a)}, &x < s \le b
+    \end{cases}
+\end{align*}
+
+\vspace{20pt}
+\textbf{II.}[2 \%] Write the generalized Legendre equation,
+\begin{align*}
+(1-x^2)\frac{d^2y}{dx^2}-2x\frac{dy}{dx}+\left\{n(n+1)-\frac{m^2}{1-\mu^2}\right\}y=0,
+\end{align*}
+as a Sturm-Liouville equation.\\
+\textbf{Grading:}
+[1 \%]: State your method and explain why it works.
+[1 \%]: Show your results.
+\vspace{20pt}
+\\
+\textbf{Method: }
+The Sturm-Liouville equation is of the form $(p(x)y')' + q(x)y = -\lambda r(x)y$. We use our attention to notice the answer.\\
+\textbf{Calculation:}\\
+Notice that $(1-x^2)' = -2x$, hence our equation may be rearranged into \begin{align*}
+    ((1-x^2) y')' = -(n(n+1) - \frac{m^2}{1-\mu^2})y
+\end{align*}
+\\
+\textbf{III.}[2 \%] Show that
+\begin{align*}
+-(xy'(x))'=\lambda xy(x),
+\end{align*}
+is self-adjoint on the interval \((0,1)\), with \(x=0\) a singular
+endpoint and \(x=1\) a regular endpoint with the condition \(y(1)=0\).\\
+\textbf{Grading:}
+[1 \%]: State your method and explain why it works.
+[1 \%]: State your proof.
+\\
+\textbf{Method: }\\
+For a linear operator $L$ to be self adjoint we must have $\langle Lf,g \rangle = \langle f,Lg \rangle$ for any $f, g$.
+By \cite{textbook}, if $L$ is of the form $\frac{d}{dx}(p(x)\frac{d}{dx}) + q(x)$, it is self adjoint iff $[p(y_1y_2'-y_1'y_2)]_a^b = 0$.
+\\
+\textbf{Calculations:}\\
+We let $L = -\frac{d}{dx}(x)$. Note that since for any $f, g \in C^2[0, 1]$ with $f(1) = g(1) = 0$, $[x(fg'-f'g)]_0^1 = 1(f(1)g'(1) - f'(1)g(1)) = 0$, we have $-L$ is self adjoint.
+Now for any $f, g \in C^2[0,1]$, $\langle Lf, g\rangle = -\langle -Lf, g \rangle = -\langle f, -Lg \rangle = \langle f, Lg \rangle$, hence $L$ is self adjoint.
+
+
+\bibliographystyle{plain}\
+\bibliography{refs}
+\end{document}

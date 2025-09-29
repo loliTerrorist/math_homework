@@ -67,10 +67,45 @@
                 Then, by the triangle inequality we obtain $d(x_m,y_m) - d(x_n, y_n) \le d(x_n, x_m) + d(y_n, y_m) < \epsilon$. Thus $(d(x_n, y_n))_{n=1}^\infty$ is Cauchy in $\mathbb{R}$ with the usual metric, which is complete, so $\lim_{n\rightarrow \infty} d(x_n, y_n)$ exists.
                 \\
                 Next we show that this distance does not depend on the choice of representatives.
-                Let $(x_n)_{n=1}^\infty$, $(x_n')_{n=1}^\infty$, $(y_n)_{n=1}^\infty$, $(y_n')_{n=1}^\infty$ be Cauchy sequences in $X$ such that $\mathrm{LIM}_{n \rightarrow \infty} x_n = \mathrm{LIM}_{n \rightarrow \infty} x_n'$ and $\mathrm{LIM}_{n \rightarrow \infty} y_n = \mathrm{LIM}_{n \rightarrow \infty} y_n'$
+                Let $(x_n)_{n=1}^\infty$, $(x_n')_{n=1}^\infty$, $(y_n)_{n=1}^\infty$ be Cauchy sequences in $X$ such that
+                $\mathrm{LIM}_{n \rightarrow \infty} x_n = \mathrm{LIM}_{n \rightarrow \infty} x_n'$. 
+                Then $\lim_{n \rightarrow \infty} d(x'_n, y_n) \le  \lim_{n \rightarrow \infty}(d(x_n', x)+d(x_n, y_n)) = \lim_{n \rightarrow \infty}d(x_n, y_n)$.
+                But also, $\lim_{n \rightarrow \infty} d(x_n, y_n) \le \lim_{n \rightarrow \infty}(d(x_n, x_n')+d(x_n', y_n)) = \lim_{n \rightarrow \infty} d(x_n', y_n)$. 
+                Hence we have $\lim_{n \rightarrow \infty} d(x_n, y_n) = \lim_{n \rightarrow \infty} d(x'_n, y_n) \\ \Rightarrow d_{\overline{X}}(\mathrm{LIM}_{n \rightarrow \infty}x_n, \mathrm{LIM}_{n \rightarrow \infty}y_n) = d_{\overline{X}}(\mathrm{LIM}_{n \rightarrow \infty}x_n', \mathrm{LIM}_{n \rightarrow \infty}y_n)$.
+                \\
+                Now we show that $d_{\overline{X}}$ is a metric.\\
+                For any Cauchy sequence $(x_n)_{n = 1}^\infty$ in $X$, $d_{\overline{X}}(\mathrm{LIM}_{n \rightarrow \infty} x_n, \mathrm{LIM}_{n \rightarrow \infty} x_n) = \lim_{n \rightarrow \infty} d(x_n, x_n) = 0$.
+                \\
+                For any Cauchy sequences $(x_n)_{n = 1}^\infty$, $(y_n)_{n = 1}^\infty$ in $X$ such that $\mathrm{LIM}_{n \rightarrow \infty}(x_n) \neq \mathrm{LIM}_{n \rightarrow \infty}(y_n)$,
+                $d_{\overline{X}}(\mathrm{LIM}_{n \rightarrow \infty}x_n,\mathrm{LIM}_{n \rightarrow \infty}y_n) = \lim_{n \rightarrow \infty} d(x_n, y_n) > 0$.
+                \\
+                For any Cauchy sequences $(x_n)_{n = 1}^\infty$, $(y_n)_{n = 1}^\infty$ in $X$, $d_{\overline{X}}(\mathrm{LIM}_{n \rightarrow \infty}x_n,\mathrm{LIM}_{n \rightarrow \infty}y_n ) = \lim_{n \rightarrow \infty} d(x_n, y_n)\\ = \lim_{n \rightarrow \infty} d(y_n, x_n) = d_{\overline{X}}(\mathrm{LIM}_{n \rightarrow \infty}y_n,\mathrm{LIM}_{n \rightarrow \infty}x_n )$
+            \item
                 
+            \item
+
+            \item
+
+            \item
         \end{enumerate}
     \item
+        \begin{enumerate}[(a)]
+            \item
+                $\partial(A \cup B) \supseteq \partial A \cup \partial B$ is trivial. 
+                We prove that $\partial(A \cup B) \subseteq \partial A \cup \partial B$.
+                Suppose $\exists x \in \partial(A\cup B)$ such that $x \not \in \partial A \cup \partial B$.
+                $\forall r>0$, $B(x, r) \cap (A\cup B) \neq \varnothing$
+                .
+                Also, $\overline{A} \cap \overline{B} =  \varnothing$, so for a given $r$, exactly one of $B(x, r) \cap A \neq \varnothing$, $B(x, r) \cap B \neq \varnothing$ must be true.
+                Since $x \not \in \partial A$, $\exists r_1 > 0$ such that $B(x, r_1)\cap A = \varnothing$. Then $B(x, r_1) \cap B \neq \varnothing$.
+                However, $B(x, r_1) \subseteq B(x, r)$ for any $r \ge r_1$. 
+                Thus $B(x, r) \cap B \neq \varnothing$ and $B(x, r) \cap A = \varnothing$ for any $r \ge r_1$.
+                Thus $\partial(A  \cup B) \subseteq \partial A \cup \partial B$ and so $\partial(A  \cup B) = \partial A \cup \partial B$.
+                Now note that $x \not \in \partial B$, so $\exists 0<r_2<r_1$ such that $B(x, r) \cap B = \varnothing$. But then $B(x, r_2) \cap A \neq \varnothing$ and $B(x, r_1)\cap A \supseteq B(x, r_2) \cap A \neq \varnothing$, arriving at a contradiction.
+                Hence $\partial(A\cup B) \subseteq \partial A \cup \partial B$ and $\partial(A\cup B) = \partial A \cup \partial B$.
+            \item
+
+        \end{enumerate}
     \item
     \item
     \item

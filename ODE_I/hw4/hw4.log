@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.12)  23 SEP 2025 14:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.12)  29 SEP 2025 09:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**hw3.tex
-(./hw3.tex
+**hw4.tex
+(./hw4.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -187,8 +187,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [A4paper].
 
-(./hw3.aux)
-\openout1 = `hw3.aux'.
+(./hw4.aux)
+\openout1 = `hw4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
@@ -265,37 +265,27 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (11.39468pt too wide) in paragraph at lines 49--65
-\OT1/cmr/m/n/12 For some Cauchy se-quences $(\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[]$, $(\OML/cmm/m/it/12 y[]\OT1/cmr/m/n/12 )[]$, $(\OML/cmm/m/it/12 z[]\OT1/cmr/m/n/12 )[]$ in X such that $[][]\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = [][]\OML/cmm/m/it/12 y[]$
- []
+) [1
 
-
-Overfull \hbox (31.13281pt too wide) in paragraph at lines 65--84
-\OT1/cmr/m/n/12 For any Cauchy se-quences $(\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )[]$, $(\OML/cmm/m/it/12 y[]\OT1/cmr/m/n/12 )[]$ in $\OML/cmm/m/it/12 X$\OT1/cmr/m/n/12 , $\OML/cmm/m/it/12 d[]\OT1/cmr/m/n/12 ([][]\OML/cmm/m/it/12 x[]; [][]y[]\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 d\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 )[] 
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./hw3.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./hw4.bbl) [2] (./hw4.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3826 strings out of 475662
- 55435 string characters out of 5784442
- 1939975 words of memory out of 5000000
- 25947 multiletter control sequences out of 15000+600000
- 565919 words of font info for 67 fonts, out of 8000000 for 9000
+ 3839 strings out of 475662
+ 55633 string characters out of 5784442
+ 1934975 words of memory out of 5000000
+ 25956 multiletter control sequences out of 15000+600000
+ 566872 words of font info for 70 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 57i,8n,65p,399b,306s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on hw3.pdf (2 pages, 100479 bytes).
+ 57i,14n,65p,219b,211s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on hw4.pdf (2 pages, 127460 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
