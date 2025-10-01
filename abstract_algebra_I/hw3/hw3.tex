@@ -1,0 +1,88 @@
+\documentclass[A4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+%\theoremstyle{bfremark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{claim}{Claim}
+
+\setlength{\parindent}{0cm}
+\numberwithin{equation}{section}
+
+\title{Abstract Algebra hw3}
+\author{Chengyu Hsieh, B13201053}
+\date{}
+\begin{document}
+\maketitle
+\begin{enumerate}[1)]
+    \item
+        \begin{enumerate}[(a)]
+            \item
+                They are not isomorphic. In $(\mathbb{Z}/15\mathbb{Z})^\times$, we have $4^2 = 11^2 = 1$, but in $\mathbb{Z}/8\mathbb{Z}$, only $4+4 = 0$, hence they cannot be isomorphic.
+            \item
+                They are isomorphic. Both are cyclic group of order $4$, the generator in $\mathbb{Z}/4\mathbb{Z}$ is $1$ and the generator in $\{z\in \mathbb{C}\backslash \{0\}\} : z^4 = 1$ is $e^{i(\frac{2\pi}{4})}$.
+            \item
+                They are isomorphic. It is easy to verify that $\phi : n\mapsto 3n$ is a homomorphism. For any $3n \in 3\mathbb{Z}$, $\exists n \in \mathbb{Z}$ such that $\phi(n) = 3n$, so $\phi$ is surjective. For $a, b \in \mathbb{Z}$, $a\neq b$, $\phi(a) = 3a \neq 3b = \phi(b)$, so $\phi$ is injective. Hence $\phi$ is an isomorphism.
+            \item
+                They are not isomorphic. Note that any $x \in \mathbb{Z}$ has infinite order, while any $z \in \mathbb{C}_1 := \{z \in \mathbb{C}\backslash\{0\} : z^n = 1 \text{ for some } n \ge 1 \}$ has finite order. We now verify $\mathbb{C}_1$ is a group. The identity, inverse and associativity are trivial. We prove that it is closed.
+                Say $x,  z \in \mathbb{C}_1$ with $x^a = 1$ and $z^b = 1$.
+                then $(xz)^{ab} = (x^a)^b(z^b)^a = 1$. So it $\mathbb{C}_1$ is closed, and hence is a group. 
+            \item
+                They are isomorphic. Note that $(123)^3 = (1) = (12)^2$ and $(12)(123)(12) = (132) = (123)^{-1}$. Hence by mapping $(123)$ to $r$ and $(12)$ to $s$ we will obtain an isomorphism.
+            \item
+                They are not isomorphic. $|S_4| = 4! = 24 \neq 8 = |D_4|$.
+            \item
+                They are isomorphic. Note that $i^4 = 1$, $i^2 = -1 = j^2$, $ji = -ij = i^3j$. Hence by mapping $i$ to $a$, $j$ to $b$ we obtain an isomorphism.
+            \item
+                They are isomorphic. 
+                Say $a$ is the generator of $G$ and $a^m$ is the generator for $H$. Let $\phi: a \mapsto a^m$. This is clearly a homomorphism and is surjective. Now for $a^k \neq a^l$, we have $a^{mk} \neq a^{ml}$ so $\phi$ is also injective, hence it is an isomorphism.
+        \end{enumerate}
+
+    \item
+        It it obvious that $\varphi$ is a bijection. 
+        We prove that it is a homomorphism.
+        For $A = \begin{pmatrix} a &-b \\ b &a\end{pmatrix}$, $B = \begin{pmatrix} c &-d \\ c &d\end{pmatrix} \in G$, the sum of those two matrcies is $\begin{pmatrix} a+c & -(b+d) \\ a+c & b+d \end{pmatrix}$.
+        Note $\varphi(A) + \varphi(B) = (a+c) + (b+d)i = \varphi(A+B)$, hence it is a homomorphism.
+
+    \item
+        \begin{enumerate}[(a)]
+            \item
+                Let $g \in G$.
+                Let $a$ be the generator for $H$.
+                Let $m_0$ be the smallest positive integer such that $a^{m_0} \in N$. 
+                For any $a^n \in N$, let $n = bm_0 + r$, $0 \leq r < m_0$. 
+                Then $a^r = a{n - bm_0} \in N$.
+                If $r\neq 0$ this would make $r$ the smallest integer such that $a^r \in N$, contradicting our assumption.
+                Hence $r=0$ and $a^{m_0}$ generates $N$.
+                Since $H$ is normal, let $g^{-1}ag = a^c$. Then $g^{-1}a^{m_0}g = a^{m_0c} \in N$. 
+                It follows that any conjugation of $(a^{m_0})^b \in N$ with respect to $g$ is in $N$. Hence $N$ is normal.
+            \item
+                Let $G = D_4 = \langle s^2 = r^4 = e, srs=r^{-1}\rangle$, $\\ H =  \{e, r^2, s, sr^2\}\cong K_4$, $N = \{e, s\}$. It is easy to verify $N \le H \le G$.
+                Note that every element in $H$ is its own inverse, hence by hw1 4) (c) we have $H$ is abelian. By hw2 5) (c) we have $N$ is normal in $H$.
+                To prove that $H$ is normal in $G$, it suffice to prove that $rHr^{-1} = H = sHs^{-1}$. The latter is trivial since $s \in H$.
+                See that $rr^2r^{-1} = r^2$, $rsr^{-1} = sr^2$, $rsr^2r^{-1} = sr$. Hence $H$ is indeed normal in $G$.
+                Now we prove that $N$ is not normal in $G$.
+                $rsr^{-1} = sr^2 \not \in N$ so $N$ is not normal in $G$.
+                
+        \end{enumerate}
+        \item
+            Given any $n \in N$, $g \in G$, we have $f(g^{-1}ngn^{-1}) = e$. Hence $g^{-1}ngn^{-1} \in ker\, f \subseteq N$.
+            Note that $g^{-1}ng = (g^{-1}ngn^{-1})n \in N$.
+            We conclude that $N$ is normal in $G$.
+\end{enumerate}
+
+\end{document}
