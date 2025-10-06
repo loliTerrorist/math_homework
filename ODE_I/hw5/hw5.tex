@@ -1,0 +1,159 @@
+\documentclass[A4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{xcolor}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+%\theoremstyle{bfremark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{claim}{Claim}
+
+\setlength{\parindent}{0cm}
+\numberwithin{equation}{section}
+
+
+\title{ODE Homework 5\, (6 \%)}
+\author{Chengyu Hsieh, B13201053}
+\date{}
+\begin{document}
+\maketitle
+\textbf{I.}[2 \%]
+Using Laplace transforms, solve the initial value problem
+\begin{align*}
+\frac{dx}{dt}+x+\frac{dy}{dt}=0,\quad \frac{dx}{dt}-x+2\frac{dy}{dt}=e^{-t}, \quad \text{subject to } x(0)=y(0)=1.
+\end{align*}
+\textbf{Grading:}
+[1 \%]: State your method and explain why it works.
+[1 \%]: Show your calculations.
+\vspace{20pt}
+\\
+\textbf{Method:}\\
+The Laplace transform is linear, hence we can apply it to each terms in the equation. 
+The resulting equation is easy to solve, and we apply the inverse Laplace transform to the solution.
+\\
+\textbf{Calculations:}\\
+Let $\mathcal{L}[x] = X(s)$ and $\mathcal{L}[y] = Y(s)$.
+Applying the Laplace transformation gives:
+\begin{align*}
+sX(s) - x(0) + X(s) + sY(s) - y(0) &= 0 \\
+sX(s) - x(0) + X(s) + 2sY(s) - 2y(0) &= \frac{1}{s+k}
+\end{align*}
+Substitute in $x(0) = y(0) = 0$ we obtain:
+\begin{align*}
+(s+1)X(s) + sY(s) &= 2 \\
+(s-1)X(s) + 2sY(s) &= 3+\frac{1}{s+1}
+\end{align*}
+Solving the equation gives:
+\begin{align*}
+X(s) &= \frac{1}{s+3} - \frac{1}{(s+1)(s+3)} \\
+&= \frac{3}{2} \frac{1}{s+3} - \frac{1}{2} \frac{1}{s+1}
+\end{align*}
+Apply the inverse Laplace transform gives:
+$$x = \mathcal{L}^{-1}[X(s)] = \frac{3}{2} e^{-3t} - \frac{1}{2} e^{-t}$$
+For $Y(s)$:
+$$Y(s) = \frac{2}{s} - \frac{1}{s+3}$$
+Apply the inverse Laplace transform gives:
+$$y = \mathcal{L}^{-1}[Y(s)] = 2-e^{-3t}$$
+\\
+
+\textbf{II.}[2 \%] Show that \(\mathcal{L}[tf(t)]=-\frac{dF}{ds}\),
+where \(F(s)=\mathcal{L}[f(t)]\). Hence solve the initial value
+problem
+\begin{align*}
+\frac{d^2x}{dt^2}+2t\frac{dx}{dt}-4x=1, \quad \text{subject
+to }x(0)=x'(0)=0.
+\end{align*}
+\textbf{Grading:}
+[1 \%]: State your method and explain why it works.
+[1 \%]: Show your calculations.
+\vspace{20pt}
+\\
+\textbf{Methods: }\\
+Notice that 
+\begin{align*}
+    \mathcal{L}[tf(t)] &= \int_0^\infty tf(t) e^{-st}dt \\
+                       &= -\int_0^\infty \frac{d}{ds}(e^{-st}f(t))dt \\
+                       &= -\frac{d}{ds} \int_0^\infty e^{-st}f(t)dt \\
+                       &= -\frac{dF}{ds}
+\end{align*}
+By \cite{textbook}, we have 
+$$\mathcal{L}[f'(t)] = s\mathcal{L}[f(t)] - f(0)$$
+$$\mathcal{L}[f''(t)] = s^2\mathcal{L}[f(t)] - sf(0) - f'(0)$$
+Substitute the above into the equation and solve for $F(s)$, then apply the Inverse Laplace transform.
+\\
+\textbf{Calculations: }\\
+\begin{align*}
+& s^2 F(s) - s x(0) - s x'(0) - 2 ( s F(s))' - 4 F(s) = \frac{1}{s} \\
+& s^2 F(s) - 2 F(s) - 2 s F'(s) - 4 F(s) = \frac{1}{s} \\
+& -2 s F'(s) + (s^2 - 6)F(s) = \frac{1}{s} \\
+& F'(s) - ( \frac{s}{2} - \frac{3}{s} ) F(s) = -\frac{1}{2 s^2} \\
+& F'(s) + ( \frac{s^3}{2} - \frac{3}{s} ) F(s) = -\frac{1}{2s^2}
+\end{align*}
+This is a first order differential equation. By \cite{textcal},
+Let 
+\begin{align*}
+    A(x) &= \int \frac{s^3}{2} - \frac{3}{s}  ds \\
+         &= 3 \ln(x) - \frac{1}{4} x^4 + C_1\\
+    e^{A(x)} &= C_2 x^3 e^{-x^2/4}
+\end{align*}
+Then we have 
+\begin{align*}
+F(s) &= \frac{e^{s^2/4}}{C_2 s^3} \int x^3 e^{-x^2/4} ( -\frac{1}{2x^2}) dx\\
+     &= \frac{e^{s^2/4}}{s^3} \int -\frac{x}{2} e^{-x^2/4} dx \\
+\text{let }u &= \frac{1}{4} x^2 \\
+du &= \frac{1}{2} x dx \\
+F(s) &= \frac{e^{s^4/4}}{s^3} \int e^{u} du \\
+&= \frac{e^{s^4/4}}{s^3} ( e^{u} + C ) \\
+&= \frac{1}{s^3} + C \frac{e^{s^2/4}}{s^3}
+\end{align*}
+By \cite{textbook}, in order for the transform to be valid, we must have $F(s) \rightarrow 0$ as $s \rightarrow \infty$. Hence $C= 0$.
+Then $F(s) = \frac{1}{s^3}$ and
+$$
+x(t) = \mathcal{L}^{-1}[\frac{1}{s^3}] = \frac{1}{2!} \mathcal{L}^{-1}[\frac{2!}{s^{2+1}}] = \frac{t^2}{2}
+$$.
+\\
+\textbf{III.}[2 \%]
+Find the inverse Laplace transform of
+\begin{align*}
+F(s)=\frac{1}{(s-1)(s^2+1)},
+\end{align*}
+by (a) expressing \(F(s)\) as partial fractions and inverting the
+constituent parts, and (b) using the convolution theorem.\\
+\textbf{Grading:}
+[1 \%]: State your method and explain why it works.
+[1 \%]: Show your calculations.\\
+\textbf{Methods: }\\
+We follow \cite{textbook}.
+\\
+\textbf{Calculations: }\\
+\begin{enumerate}[(a)]
+    \item
+        Notice that $$\frac{1}{(s-1)(s^2+1)} = \frac{1}{2(s-1)} - \frac{1}{2}(\frac{s+1}{s^2+1})$$.
+        Hence $\mathcal{L}^{-1}[F] = \frac{1}{2}(e^{-t}-\cos t - \sin t)$.
+    \item
+        By the convolution theorem,
+        \begin{align*}
+            \mathcal{L}^{-1}[F] &= \mathcal{L}^{-1}[\frac{1}{s-1}] * \mathcal{L}^{-1} [\frac{1}{s^2+1}] \\
+                                &= e^t * \sin t \\
+                                &= \int_0^t e^\tau \sin (t-\tau) d\tau \\
+                                &= -\sin t + \int_0^t e^\tau \cos(t-\tau)d\tau \\
+                                &= -\sin t + e^t - \cos t - \int_0^t e^\tau \sin (t-\tau) d\tau 
+        \end{align*}
+        Hence $\mathcal{L}^{-1}[F] = \frac{1}{2}(e^{-t}-\cos t - \sin t)$.
+\end{enumerate}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{document}
